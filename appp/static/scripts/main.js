@@ -87,7 +87,7 @@
             }
         });
         var message_greetings = new Message({
-            text: 'Hi, I am DialoGPT. How can I help you?',
+            text: 'Hi, I am NeuroRPG. How can I help you?',
             message_side: 'left'
         });
         message_greetings.draw();
