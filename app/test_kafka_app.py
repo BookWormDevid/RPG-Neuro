@@ -7,8 +7,6 @@ import os
 # Config API
 app = Flask(__name__)
 socketio = SocketIO(app)
-# Removed CORS configuration
-
 # Config model
 BOOTSTRAP_SERVERS = os.environ.get("KAFKA_BROKER_URL")  # e.g., 'kafka:9092'
 TOPIC_NAME = os.environ.get("TRANSACTIONS_TOPIC")
@@ -46,9 +44,11 @@ def kafkaconsumer():
     for message in consumer:
         msg = message.value.decode("utf-8")
         response = chatbot(msg)
+        print(response)
         emit("kafkaconsumer", response)
         # Assuming you want to process only the latest message, break after one
         break
+
     consumer.close()
 
 
@@ -65,6 +65,5 @@ def kafkaproducer(message):
 
 
 if __name__ == "__main__":
-    from model import chatbot
+    from kafka_model import chatbot
     socketio.run(app, host="0.0.0.0", port=80, allow_unsafe_werkzeug=True)
-

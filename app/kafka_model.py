@@ -3,16 +3,15 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 nb_sentences = 1
 
 # load model and token thing
-model_path = "dewd/checkpoint-1101"
-finetuned_model = AutoModelForCausalLM.from_pretrained(model_path)
-tokenizer = AutoTokenizer.from_pretrained("gpt2")
+finetuned_model = AutoModelForCausalLM.from_pretrained("DevidCipher/RPG-Neuro")
+tokenizer = AutoTokenizer.from_pretrained("DevidCipher/RPG-Neuro")
 tokenizer.pad_token = tokenizer.eos_token
 
 # Use GPU if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 finetuned_model.to(device)
 
-chat_history_ids = {}
+chat_history_ids = None
 
 
 def chatbot(msg):

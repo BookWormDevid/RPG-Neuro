@@ -1,4 +1,4 @@
-'''import torch
+import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from flask import Flask, render_template, request, jsonify
 import uuid
@@ -6,9 +6,9 @@ import uuid
 app = Flask(__name__)
 
 # Load model and tokenizer
-model_path = "./dewd/checkpoint-1101"
+model_path = "DevidCipher/RPG-Neuro"
 finetuned_model = AutoModelForCausalLM.from_pretrained(model_path)
-tokenizer = AutoTokenizer.from_pretrained("gpt2")
+tokenizer = AutoTokenizer.from_pretrained(model_path)
 tokenizer.pad_token = tokenizer.eos_token
 
 # Device setup
@@ -107,4 +107,4 @@ def ask():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)'''
+    app.run(host="0.0.0.0", port=5000)
