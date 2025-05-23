@@ -8,17 +8,23 @@ An ML project, that uses adjusted and re-trained GPT-2 chat bot to create authen
 
 1. Pull докер образ с docker hub:
    
-```docker pull devidcipher/rpg-neuro:latest```
+```shell
+docker pull devidcipher/rpg-neuro:latest
+```
 
 2. Run докер образ, который вы загрузили:
    
-```docker run -d -p 5000:5000 --name rpg-neuro```
+```shell
+docker run -d -p 5000:5000 --name rpg-neuro
+```
 
 (При первом запуске, рекомендую не использовать аргумент -d)
 
 3. Проверьте что контейнер работает:
 
-```docker ps```
+```shell
+docker ps
+```
 
 4. Зайдите на сайт приложения и пользуйтесь:
 http://127.0.0.1:5000 или http://192.168.0.xxx:5000
@@ -26,7 +32,9 @@ http://127.0.0.1:5000 или http://192.168.0.xxx:5000
 
 Для остановки приложения:
 
-```docker stop rpg-neuro```
+```shell
+docker stop rpg-neuro
+```
 
 Пример работы rpg-neuro:
 
