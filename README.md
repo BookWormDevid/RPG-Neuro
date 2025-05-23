@@ -6,4 +6,5 @@ An ML project, that uses adjusted and re-trained GPT-2 chat bot to create authen
 
 Инструкция по разворачиванию проекта через docker:
 1) Pull докер образ с docker hub:
-'docker pull devidcipher/rpg-neuro:latest'
+   
+'''docker pull devidcipher/rpg-neuro:latest
