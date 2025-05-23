@@ -42,3 +42,6 @@ docker stop rpg-neuro
 
 ![cc6f7a23-df3a-4b64-a839-25940f5886cc](https://github.com/user-attachments/assets/ae606659-4694-4345-a6de-19cba8784418)
 
+
+Kafka официально DeD/404/502. Попытки её воскресить не удались. 
+
