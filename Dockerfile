@@ -1,5 +1,5 @@
-# Используем образ python slim
-FROM python:3.10-slim
+# Используем образ с поддержкой CUDA для PyTorch, если нужен GPU, или CPU-образ
+FROM pytorch/pytorch:2.3.0-cuda11.8-cudnn8-runtime
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
