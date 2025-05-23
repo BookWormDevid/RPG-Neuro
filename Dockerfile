@@ -10,14 +10,21 @@ RUN apt-get update && \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# Копируем код приложения и зависимости
-COPY ./ ./
+# Копируем файл с зависимостями
+COPY requirements.txt .
 
 # Устанавливаем Python-зависимости
 RUN pip install -r requirements.txt
+
+# Копируем весь root
+COPY . .
+
+# Указываем что app.py - flask приложение
+ENV FLASK_APP=app.py
+
 
 # Открываем порт для Flask
 EXPOSE 5000
 
 # Команда для запуска приложения
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
