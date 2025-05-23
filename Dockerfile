@@ -1,11 +1,12 @@
-# Используем образ с поддержкой CUDA для PyTorch, если нужен GPU, или CPU-образ
-FROM pytorch/pytorch:2.3.0-cuda11.8-cudnn8-runtime
+# Используем образ python slim
+FROM python:3.10-slim
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
 # Устанавливаем системные зависимости
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
